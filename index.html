@@ -5,30 +5,122 @@
 </head>
 <body>
 
-  <h1>Yo!</h1>
+  <section class="intro">
+    <h1>DSGN 1374</h1>
+    <p>hey gang, this is my teaching site for the fall 2020 session of <em>web design 1</em> at niagara college.</p>
+  </section>
+  
+  <section class="assignments">
+    <h3>Assignments</h3>
+    <ul>
+      <li>
+        <a href="markup/index.html">Markup</a>
+      </li>
+      <li>
+        <a href="styles/index.html">Styles</a>
+      </li>
+      <li>
+        <a href="type/index.html">Type</a>
+      </li>
+      <li>
+        <a href="images/index.html">Images</a>
+      </li>
+      <li>
+        <a href="interview/index.html">Interview</a>
+      </li>
+      <li>
+        <a href="responses/index.html">Responses</a>
+      </li>
+    </ul>
+  </section>
 
-  <p>This is your own personal Web Design 1 homepage. Feel free to customize the HTML and the CSS to personalize it and make it your own. This page can be an ongoing little project for yourself to try new things and share your experiments with your classmates.</p>
+  <section class="sites">
+    <h3>Participants</h3>
+    <ul class="sites-list">
 
-  <h3>Assignments</h3>
-  <ul>
-    <li>
-      <a href="markup/index.html">Markup</a>
-    </li>
-    <li>
-      <a href="styles/index.html">Styles</a>
-    </li>
-    <li>
-      <a href="type/index.html">Type</a>
-    </li>
-    <li>
-      <a href="images/index.html">Images</a>
-    </li>
-    <li>
-      <a href="interview/index.html">Interview</a>
-    </li>
-    <li>
-      <a href="responses/index.html">Responses</a>
-    </li>
-  </ul>
+    </ul>
+  </section>
+  
+  <section class="image">
+    <img src="music.gif" alt="music"> 
+  </section>
+
+  <section class="random">
+    <a href="#" class="button">Random</a>
+  </section>
+
+  <script>
+    // Alphabetized site list
+    let sites = [
+      'https://windsortoria.github.io/dsgn1374/',
+      'https://juzou12.github.io/dsgn1374/',
+      'https://jihyeboo.github.io/dsgn1374/',
+      'https://jennabrinkmann.github.io/dsgn1374/',
+      'https://tdanecker1.github.io/dsgn1374/',
+      'https://katelynderreck.github.io/',
+      'https://gurleen474.github.io/dsgn1374/',
+      'https://spencerdrummond23.github.io/DSGN1374/',
+      'https://autumnelliott.github.io/dsgn1374/',
+      'https://thill23.github.io/dsgn1374/',
+      'https://mawolo.github.io/dsgn1374/',
+      'https://ianiojr.github.io/DSGN1374/',
+      'https://yimingmao001.github.io/dsgn1374/',
+      'https://niamartin.github.io/DSGN1374/',
+      'https://taylormcara.github.io/dsgn1374/',
+      'https://uyenphuongphan.github.io/dsgn1374/',
+      'https://firebolt40.github.io/dsgn1374/',
+      'https://eashaan16.github.io/dsgn1374/',
+      'https://krishna9366.github.io/dsgn1374/',
+      'https://emilyspeckk.github.io/dsgn1374/',
+      'https://chloe-tran-hn.github.io/dsgn1374/',
+      'https://ttran77.github.io/dsgn1374/',
+      'https://nviettung1.github.io/dsgn1374/',
+      'https://aggie-z.github.io/DSGN1374/',
+      'https://mattbrisebois.github.io/dsgn1374/',
+      'https://datafrotho.github.io/Dsgn1374/',
+      'https://drummer1940.github.io/dsgn1374/',
+      'https://frankifraser.github.io/dsgn1374/',
+      'https://jhardy2000.github.io/dsgn1374/',
+      'https://mhernandez6.github.io/dsgn1374/',
+      'https://mhollard.github.io/DSGN1374/',
+      'https://unsiaimtiaz.github.io/dsgn1374/',
+      'https://kaldershotdesign.github.io/dsgn1374/',
+      'https://rainbowrayndrops.github.io/DSGN1374/',
+      'https://julesiax.github.io/DSGN1374/',
+      'https://micmacpaddywhack.github.io/DSGN1374/',
+      'https://steph-parker.github.io/dsgn1374/',
+      'https://juliaparson.github.io/dsgn1374/',
+      'https://rvangurp.github.io/dsgn1374/',
+      'https://sydneyvrbanac.github.io/dsgn1374/',
+      'https://kekyon.ca/dsgn1374/',
+    ]
+
+    let sitesContainer = document.querySelector('.sites-list')
+    let sitesAlpha = sites.sort()
+    let sitesList = ``
+    for (let i = 0; i < sitesAlpha.length; i++) {
+      sitesList += `<li>
+<a href="${sitesAlpha[i]}">
+${sitesAlpha[i]
+.substr(0,sitesAlpha[i].indexOf('.'))
+.replace('https://', '')
+}
+</a>
+</li>`
+    }
+    sitesContainer.innerHTML = sitesList
+
+    // Random
+    let random = document.querySelector('.random .button')
+    let randNum = Math.floor(Math.random() * sitesAlpha.length)
+    random.addEventListener('click', e => {
+      e.preventDefault()
+      window.location.href = sitesAlpha[randNum]
+    })
+    
+  </script>
+
+
+
 
 </body>
